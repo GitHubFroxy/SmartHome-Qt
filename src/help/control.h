@@ -23,7 +23,7 @@ Description:智能家居---系统所需常量的声明及定义
 #define WINDOW_ONEBUTTON_WIDTH  170
 #define DEFALUT_SKIN    "images/login/skin"
 
-#define _ARM_        0
+//#define _ARM_        0
 
 //调试信息输出控制，1：输出信息，0：不输出信息
 #define QDEBUG  1

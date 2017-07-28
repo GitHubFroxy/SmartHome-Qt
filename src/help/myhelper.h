@@ -5,7 +5,8 @@
 #include <QtGui>
 #include <QDesktopWidget>
 #include "frmmessagebox.h"
-
+#include <QApplication>
+#include <QSound>
 class myHelper:public QObject
 {
 public:
@@ -126,7 +127,7 @@ public:
         char lstr,hstr;
         for(int i=0; i<len; )
         {
-            hstr=str[i].toAscii();
+            hstr=str[i].toLatin1();
             if(hstr == ' ')
             {
                 i++;
@@ -135,7 +136,7 @@ public:
             i++;
             if(i >= len)
                 break;
-            lstr = str[i].toAscii();
+            lstr = str[i].toLatin1();
             hexdata = ConvertHexChar(hstr);
             lowhexdata = ConvertHexChar(lstr);
             if((hexdata == 16) || (lowhexdata == 16))
