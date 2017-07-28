@@ -104,12 +104,12 @@ void Widget::initForm()
     m_isPress = false;
     location = this->location;
 
-    ui->tbnRelaxation->setVisible(false);
-    ui->tbnMusic->setVisible(false);
-    ui->tbnCurtain->setVisible(false);
-    ui->tbnNight->setVisible(false);
+    ui->tbnRelaxation->setVisible(true);
+    ui->tbnMusic->setVisible(true);
+    ui->tbnCurtain->setVisible(true);
+    ui->tbnNight->setVisible(true);
 
-    ui->tbnSafety->setVisible(false);
+    ui->tbnSafety->setVisible(true);
 }
 
 //界面初始化
@@ -248,13 +248,13 @@ void Widget::initConnect()
     connect(m_saveDataThread,SIGNAL(signalUpdataData()),
             m_statisticWidget,SLOT(slotUpdataData()));
 
-//    connect(m_saveDataThread,SIGNAL(signalUpdataData()),
-//            m_statisticWidget,SLOT(loadPlotHumidity()));
+    connect(m_saveDataThread,SIGNAL(signalUpdataData()),
+            m_statisticWidget,SLOT(loadPlotHumidity()));
 
-//    connect(m_timer,SIGNAL(timeout()),
-//            m_statisticWidget,SLOT(loadPlotHumidity()));
-//    connect(m_timer,SIGNAL(timeout()),
-//            m_statisticWidget,SLOT(loadPlotSmoke()));
+    connect(m_timer,SIGNAL(timeout()),
+            m_statisticWidget,SLOT(loadPlotHumidity()));
+    connect(m_timer,SIGNAL(timeout()),
+            m_statisticWidget,SLOT(loadPlotSmoke()));
 
     /*********************系统设置**********************/
     connect(m_settingDialog,SIGNAL(signalSendSetTempValue(int)),
@@ -531,5 +531,5 @@ void Widget::on_tbnMusic_clicked()
 
 void Widget::on_tbnSetting_clicked()
 {
-    //m_settingDialog->exec();
+    m_settingDialog->exec();
 }
