@@ -121,8 +121,10 @@ void SaveDataThread::insertData()
     sensor_id <<DEVICE_TEMP << DEVICE_HUM <<DEVICE_SMOKE;
     query.addBindValue(sensor_id);
     QVariantList sensor_value;
-    sensor_value << cur_parlour_tempture <<cur_parlour_humidity
-                    <<cur_smoke_density;
+//    sensor_value << cur_parlour_tempture <<cur_parlour_humidity
+//                    <<cur_smoke_density;//TODO yang jujuewenti
+    sensor_value << 12 <<18
+                    <<20;
     query.addBindValue(sensor_value);
     QVariantList sensor_data;
     sensor_data << currentDataTime

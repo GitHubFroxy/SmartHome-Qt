@@ -7,7 +7,7 @@ QString Myapp::AppPath = "";
 
 int Myapp::DeskWidth = 1024;
 int Myapp::DeskHeigth = 768;
-QString Myapp::winPortName = "COM5";                   //Win默认串口号
+QString Myapp::winPortName = "COM2";                   //Win默认串口号
 QString Myapp::linuxPortName = "ttyUSB0";               //linux默认串口号
 int Myapp::baudRate = 9600;
 bool Myapp::AutoRun = true;

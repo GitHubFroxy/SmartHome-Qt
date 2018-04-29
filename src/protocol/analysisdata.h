@@ -46,7 +46,7 @@ typedef enum MODEL{
     CMD_PARLOUR_LED_TOP_ON          ,     //客厅顶灯亮        42
     CMD_PARLOUR_LED_TOP_OFF         ,     //客厅顶灯灭        43
     CMD_PARLOUR_LED_HELP_ON         ,     //客厅辅灯亮        44
-    CMD_PARLOUR_LED_HELP_OFF        ,     //客厅福鼎灭        45
+    CMD_PARLOUR_LED_HELP_OFF        ,     //客厅辅灯灭        45
     CMD_KITCHEN_LED_ON              ,     //厨房灯亮          46
     CMD_KITCHEN_LED_OFF             ,     //厨房灯灭          47
     CMD_BEEP_ON						,     //蜂鸣器响          48

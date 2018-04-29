@@ -49,13 +49,13 @@ int main(int argc, char *argv[])
     Myapp::AppPath = dir.currentPath();
 
     //使程序只能运行一个实例
-//    QSharedMemory shared_memory("SmartHome");
+    QSharedMemory shared_memory("SmartHome");
 
-//    if (!shared_memory.create(1))
-//    {
-//        myHelper::showMessageBoxError("程序已经运行，系统将自动关闭!");
-//        return 1;
-//    }
+    if (!shared_memory.create(1))
+    {
+        myHelper::showMessageBoxError("程序已经运行，系统将自动关闭!");
+        return 1;
+    }
 
     if (!myHelper::FileIsExist("SmartHome.db"))
     {
