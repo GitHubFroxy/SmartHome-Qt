@@ -262,7 +262,7 @@ void ReadSerialPortData::slotReceiveChildrenValue(quint8 value)
  *参数：model:温度或者湿度
  *     value:对应的值
  **/
-void ReadSerialPortData::slotReceiveParlourValue(quint8 model, const QString &value)
+void ReadSerialPortData::slotReceiveParlourValue(MODEL model, const QString &value)
 {
     quint8 data_len = value.length();
 #if QDEBUG

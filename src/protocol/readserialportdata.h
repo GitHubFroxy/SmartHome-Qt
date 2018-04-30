@@ -85,7 +85,7 @@ public slots:
     void slotReceiveChildrenValue(quint8 value);
 
     //接收客厅传递过来的温湿度预设值
-    void slotReceiveParlourValue(quint8,const QString &);
+    void slotReceiveParlourValue(MODEL,const QString &);
 
 private:
     quint8 m_sendBegin;			//起始标志  以“#”开始

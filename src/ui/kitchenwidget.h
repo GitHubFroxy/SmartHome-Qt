@@ -46,7 +46,7 @@ signals:
     void signalLight(quint8 model);      //发送灯的状态命令(打开/关闭)
 
     //发送烟雾预设值
-    void signalSendSmokeValue(quint8,const QString&);
+    void signalSendSmokeValue(MODEL,const QString&);
 
 public Q_SLOTS:
     void slotChangeSmokeSetValue(const int &);

@@ -98,7 +98,6 @@ void Widget::initForm()
                        ":/images/bottom/statistics.png");
     setToolButtonStyle(ui->tbnRelaxation,"添加",E_NORMAL,
                        ":/images/bottom/add.png");
-    //    this->setCurrentWidget(E_HOME_WIDGET);
     ui->stackedWidget->setCurrentIndex(E_HOME_WIDGET);
 
     m_isPress = false;
@@ -188,10 +187,10 @@ void Widget::initConnect()
     connect(m_parlourWidget,SIGNAL(signalLightHelp(quint8)),
             m_readSerial,SLOT(slotReceiveChildrenValue(quint8)));
     //发送温度和湿度预设值信息给下位机
-    connect(m_parlourWidget,SIGNAL(signalSendTemptureValue(quint8,QString)),
-            m_readSerial,SLOT(slotReceiveParlourValue(quint8,QString)));
-    connect(m_parlourWidget,SIGNAL(signalSendHumidityVlaue(quint8,QString)),
-            m_readSerial,SLOT(slotReceiveParlourValue(quint8,QString)));
+    connect(m_parlourWidget,SIGNAL(signalSendTemptureValue(MODEL,QString)),
+            m_readSerial,SLOT(slotReceiveParlourValue(MODEL,QString)));
+    connect(m_parlourWidget,SIGNAL(signalSendHumidityVlaue(MODEL,QString)),
+            m_readSerial,SLOT(slotReceiveParlourValue(MODEL,QString)));
 
     /*******************卧室信息信号和槽关联*********************/
     //接收关联
@@ -214,8 +213,8 @@ void Widget::initConnect()
     //发送关联
     connect(m_kitchenWidget,SIGNAL(signalLight(quint8)),
             m_readSerial,SLOT(slotReceiveChildrenValue(quint8)));
-    connect(m_kitchenWidget,SIGNAL(signalSendSmokeValue(quint8,QString)),
-            m_readSerial,SLOT(slotReceiveParlourValue(quint8,QString)));
+    connect(m_kitchenWidget,SIGNAL(signalSendSmokeValue(MODEL,QString)),
+            m_readSerial,SLOT(slotReceiveParlourValue(MODEL,QString)));
 
     /*******************窗帘信号和槽关联************************/
     connect(m_curtainWidget,SIGNAL(signalControlCurtain(quint8)),
@@ -248,13 +247,13 @@ void Widget::initConnect()
     connect(m_saveDataThread,SIGNAL(signalUpdataData()),
             m_statisticWidget,SLOT(slotUpdataData()));
 
-    connect(m_saveDataThread,SIGNAL(signalUpdataData()),
-            m_statisticWidget,SLOT(loadPlotHumidity()));
+//    connect(m_saveDataThread,SIGNAL(signalUpdataData()),
+//            m_statisticWidget,SLOT(loadPlotHumidity()));
 
-    connect(m_timer,SIGNAL(timeout()),
-            m_statisticWidget,SLOT(loadPlotHumidity()));
-    connect(m_timer,SIGNAL(timeout()),
-            m_statisticWidget,SLOT(loadPlotSmoke()));
+//    connect(m_timer,SIGNAL(timeout()),
+//            m_statisticWidget,SLOT(loadPlotHumidity()));
+//    connect(m_timer,SIGNAL(timeout()),
+//            m_statisticWidget,SLOT(loadPlotSmoke()));
 
     /*********************系统设置**********************/
     connect(m_settingDialog,SIGNAL(signalSendSetTempValue(int)),

@@ -328,6 +328,10 @@ void StatisticWidget::loadPlotHumidity()
     m_plots_list.at(1)->yAxis->setRange(0,m_plot_hum_values.last()+20);
     m_plots_list.at(1)->replot();
 #endif
+    QTime time;
+    time.start();
+
+
     //第三次修改
     /*
      *只获取当前时间点前一分钟数据，数据显示是每一分钟刷新一次的。
@@ -375,7 +379,7 @@ void StatisticWidget::loadPlotHumidity()
     {
         qDebug()<<"\n humidity data is empty!\n";
     }
-
+    qDebug()<<time.elapsed()/1000.0<<"s";
 }
 
 void StatisticWidget::loadPlotSmoke()

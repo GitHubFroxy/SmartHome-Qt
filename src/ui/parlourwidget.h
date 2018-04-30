@@ -74,9 +74,9 @@ signals:
     void signalLightHelp(quint8 cmd);
 
     //send tempture value
-    void signalSendTemptureValue(quint8, const QString&);
+    void signalSendTemptureValue(MODEL, const QString&);
     //send humidity value
-    void signalSendHumidityVlaue(quint8,const QString&);
+    void signalSendHumidityVlaue(MODEL,const QString&);
 
 public Q_SLOTS:
     void slotChangeTempSetValue(const int &);
